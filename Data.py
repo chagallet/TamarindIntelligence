@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 
 def load_data():
-    data = pd.read_excel("TamarindIntelligence/Consumer survey task.xlsx")
+    data = pd.read_excel("Consumer survey task.xlsx")
     data = data.rename(columns={'What is your gender?':'gender','Which age group do you belong to?':'age_group','Which category your current PRIMARY device belongs to? (the device you use the most often)':'primary_device', 'Please select the piece of MAIN hardware that you last purchased (at least within 3 months).':'main_hardware', 'What was the brand of this piece of HARDWARE? Please select only one':'brand', 'Please rate from 1 (Not at all) to 10 (Very) how satisfied you are with this piece of hardware.':'satisfaction'})
     data.iloc[:,6]=data.iloc[:,6].replace('10=Very satisfied','10')
     data.iloc[:,6]=data.iloc[:,6].replace('1=Not at all satisfied','1')
